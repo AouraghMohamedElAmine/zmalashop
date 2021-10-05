@@ -1,23 +1,25 @@
-const express = require('express');
- const app = express(); 
-const products = require('./products');
- 
-app.get('/',(req,res)=>{
-    res.send('api is running')
-})
+import express  from "express";
+import products  from "./products.js" ;
+import dotenv from 'dotenv'
+import connectDb from "./config/config.js";
 
-app.get('/api/products',(req,res)=>{
-    res.send(products)
-})
+const app = express();
+dotenv.config()
+connectDb();
+app.get("/", (req, res) => {
+  res.send("api is running");
+});
 
-app.get('/api/products/:id',(req,res)=>{
-    products.map((p)=>{
-        if(req.params.id === p._id){ 
-            return res.send(p)
-        }
-     })
+app.get("/api/products", (req, res) => {
+  res.send(products);
+});
 
-})
-
-
-app.listen(5000 , console.log('server running on port 5000'))
+app.get("/api/products/:id", (req, res) => {
+  products.map((p) => {
+    if (req.params.id === p._id) {
+      return res.send(p);
+    }
+  });
+});
+const PORT = process.env.PORT || 5000 ; 
+app.listen(PORT, console.log(`server running in ${process.env.NODE_ENV} mode on port ${PORT}`));
