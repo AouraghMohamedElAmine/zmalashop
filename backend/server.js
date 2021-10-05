@@ -6,15 +6,14 @@ app.get('/',(req,res)=>{
     res.send('api is running')
 })
 
-app.get('/products',(req,res)=>{
+app.get('/api/products',(req,res)=>{
     res.send(products)
 })
 
-app.get('/products/:id',(req,res)=>{
-
+app.get('/api/products/:id',(req,res)=>{
     products.map((p)=>{
         if(req.params.id === p._id){ 
-            return res.json(p)
+            return res.send(p)
         }
      })
 
