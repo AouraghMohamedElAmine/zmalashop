@@ -6,6 +6,7 @@ const app = express();
 dotenv.config()
 app.use('/api/products',productsRoutes)
 connectDb();
+
 app.get("/", (req, res) => {
   res.send("api is running");
 });

@@ -4,8 +4,7 @@ const router = express.Router();
  import Product from "../models/productModel.js";
 
 router.get("/", async (req, res) => {
-  const products = await Product.find();
-
+  const products = await Product.find({});
   res.send(products);
 });
 
