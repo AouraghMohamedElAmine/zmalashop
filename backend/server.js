@@ -1,11 +1,14 @@
 import express  from "express";
  import dotenv from 'dotenv'
 import connectDb from "./config/config.js";
-import productsRoutes from "./routes/productsRoutes.js";
+import  productsRoutes  from "./routes/productsRoutes.js";
+import  usersRoutes  from "./routes/usersRoutes.js"
 const app = express();
 dotenv.config()
-app.use('/api/products',productsRoutes)
 connectDb();
+app.use(express.json())
+app.use('/api/products', productsRoutes)
+app.use('/api/users', usersRoutes)
 
 app.get("/", (req, res) => {
   res.send("api is running");
