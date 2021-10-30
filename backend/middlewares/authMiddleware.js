@@ -9,13 +9,12 @@ const protect = async (req , res , next ) =>{
     req.user = token.id
     next()
    } catch (error) {
-    res.send(error.message) 
+    res.status(401)
    }
-    
-    
+
  }
  else{
-     res.send('error')
- }
+  res.status(401)
+}
 }
 export default protect
