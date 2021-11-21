@@ -12,6 +12,7 @@ const userSchema = mongoose.Schema({
     required: true,
     ref : "User"
   },
+
   name: {
     type: String,
     required: true,
@@ -34,13 +35,13 @@ const userSchema = mongoose.Schema({
    },
   rating: {
     type: Number,
-    required: true,
+    required: false,
     default : 0 
    },
-   Reviews: [reviewsSchema],
+   Reviews:  [reviewsSchema] ,
    numReviews: {
     type: Number,
-    required: true,
+    required: false,
     default : 0 
    },
    Price : {
