@@ -21,12 +21,13 @@ const orderSchema = mongoose.Schema(
       },
     ],
     ShippingAdress: {
-      adress: { type: String, required: true },
-      city: { type: String, required: true },
-      country: { type: String, required: true },
-      postalCode: { type: String, required: true },
+      wilaya: { type: String, required: true },
+      daira: { type: String, required: true },
+      commune: { type: String, required: true },
+      phoneNumber: { type: String, required: true },
     },
-
+ 
+/*
     paymentMethod: {
       type: String,
       required: true,
@@ -37,6 +38,7 @@ const orderSchema = mongoose.Schema(
       updateTime: { type: String },
       emailAdress: { type: String },
     },
+    */
     TaxPrice: {
       type: Number,
       required: true,
@@ -44,7 +46,8 @@ const orderSchema = mongoose.Schema(
     },
     shippingPrice: {
       type: Number,
-      required: true,
+      required: true,    
+      default: 0.0,
     },
     totalPrice: {
       type: Number,
