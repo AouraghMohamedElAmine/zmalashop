@@ -24,7 +24,7 @@ const userLoginActions = (email, password) => async (dispatch, getState) => {
   } catch (error) {
     dispatch({
       type: USER_LOGIN_FAIL,
-      payload:  `wrong password or email password : +${password}+ email : +${email}+`,
+      payload:  `wrong password or email password`,
     });
   }
   localStorage.setItem("user", JSON.stringify(getState().userLoginData));

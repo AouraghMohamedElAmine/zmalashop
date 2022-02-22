@@ -13,8 +13,8 @@ app.use(express.json());
 app.use("/api/products", productsRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/orders", ordersRoutes);
-app.use(notFound)
-app.use(errorHandler);
+// app.use(notFound)
+// app.use(errorHandler);
 
 app.get("/", (req, res) => {
   res.send("api is running");
