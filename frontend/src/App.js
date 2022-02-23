@@ -17,7 +17,7 @@ import OneOrderScreen from "./screens/OneOrderScreen.js";
  function App() {
  
   return (
-    <Router>
+    <Router basename="https://zmalashop.vercel.app">
       <Header />
    
       <Container>
